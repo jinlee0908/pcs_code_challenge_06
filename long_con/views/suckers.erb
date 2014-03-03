@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body>
+	<%= erb :header_partial %>
+  
+  <p> Click anywhere on a row to see details </p>
+
+   <table border=1>
+    <tr>
+      <th>name</th>
+      <th>email</th>
+    </tr>
+    <% @people.each do |person| %>
+      <tr>
+        <td><a><%= person[:name] %></a></td>
+        <td><a><%= person[:email] %></a></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <footer>
+      <%= erb :footer_partial %>
+  </footer>
+</body>
