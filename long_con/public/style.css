@@ -1,0 +1,57 @@
+html {
+  min-height: 100%;
+  padding-left: 5%
+}
+
+body {
+	color: #929292;
+	background: #F5F1B7;
+	font-style: Helvetica; sans-serif;
+}
+
+p {
+	min-width: 60%;
+	padding-bottom: 8%;
+}
+
+footer{
+	margin-top: 10%;	
+}
+
+.foot{
+	text-align:center;
+}
+
+/*=========================== Index & Thanks ===================================*/
+.logo {
+float: right;
+margin-left: 10%;
+min-width: 40%;
+
+}
+/*============================== Index =========================================*/
+.form {
+	padding-left:5%;
+	padding-right: 5%;
+	padding-bottom: 7.5%;
+	min-width: 50%;
+	max-width: 70%;
+	background-color: #8ED659;
+}
+
+Input[type="text"]{
+	width:400px;
+	height:20px;
+	margin-bottom: 1%;
+}
+
+Input[type="submit"]{
+	float: right;
+	margin-right: 10%
+}
+
+Input[name="name"]{
+	width:700px;
+}
+
+/*============================== Suckers =========================================*/

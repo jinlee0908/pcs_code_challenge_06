@@ -4,25 +4,29 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <!--Mainstyles css -->
-  <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" media="screen">
+  <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" media=
 </head>
 
 <body>
 	<%= erb :header_partial %>
 
   <h1> Suckers</h1>
-  
-  <p> Click anywhere on a row to see details </p>
+
+  <p><a href = '/suckers' >Return to listing</a></p>
 
    <table border=.5>
     <tr>
       <th>name</th>
       <th>email</th>
+      <th>phone</th>
+      <th>twitter</th>
     </tr>
     <% @people.each do |person| %>
       <tr>
-        <td><a href= 'suckers/<%= person[:id]%>'><%= person[:name] %></a></td>
-        <td><a href= 'suckers/<%= person[:id]%>'><%= person[:email] %></a></td>
+        <td><a><%= person[:name] %></a></td>
+        <td><a><%= person[:email] %></a></td>
+        <td><a><%= person[:phone] %></a></td>
+        <td><a><%= person[:twitter] %></a></td>
       </tr>
     <% end %>
   </table>
