@@ -1,5 +1,10 @@
 require './long_con_test_helper.rb'
 
+before do
+    @test_data = [{id:1, name:'Mrs. Theresa E. Stamm', email:'kieran@runte.biz', phone:'1-678-523-6736', twitter:'@Reinger'},
+    {id:2, name:'Keara Maggio', email:'cayla@lubowitz.com',phone:'1-399-471-4388 x9581', twitter:'@Weber'}]
+end
+
 class MyTest < MiniTest::Unit::TestCase
 
   include Rack::Test::Methods
@@ -11,27 +16,41 @@ class MyTest < MiniTest::Unit::TestCase
   def test_long_con
     get '/'
     assert last_response.ok?
-    assert_equal "Hello, World!", last_response.body
-
-    get '/thanks'
-    assert last_response.ok?
-    assert_equal "Thanks!", last_response.body
 
     get '/suckers'
     assert last_response.ok?
-    assert_equal "Suckers!", last_response.body
 
     get '/suckers/:id'
     assert last_response.ok?
-    assert_equal "Suckers id", las_response.body
-  end
 
-  def test_post
-    post '/'
+    post '/thanks'
     assert last_response.ok?
-    assert_equal "Caught a post", last_response.body
   end
 
-  def redirect
+  def test_name_on_thanks
+    post '/thanks', :name => 'Jin'
+    assert last_response.body.include?('Jin')
   end
+
+  def test_suckers_on_suckers_page
+    get '/suckers'
+    assert last_response.body.include?('kieran@runte.biz')
+    assert last_response.body.include?('Mrs. Theresa E. Stamm')
+  end
+
+  def test_not_a_sucker_on_suckers_page
+    get '/suckers'
+    refute last_response.body.include?('fake@email.com')
+  end
+
+  def test_single_sucker_on_specific_page
+    get '/suckers/:id', :id => 2
+    assert last_response.body.include?('Keara Maggio')
+  end
+
+  def test_other_sucker_not_on_specific_page
+    get '/suckers/:id', :id => 2
+    refute last_response.body.include?('Mrs. Theresa E. Stamm')
+  end
+
 end
