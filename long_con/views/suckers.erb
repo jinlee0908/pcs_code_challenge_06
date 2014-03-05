@@ -1,33 +1,16 @@
-<!doctype html>
-<html lang="en">
+<h1> Suckers</h1>
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <!--Mainstyles css -->
-  <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" media="screen">
-</head>
+<p> Click anywhere on a row to see details </p>
 
-<body>
-	<%= erb :header_partial %>
-
-  <h1> Suckers</h1>
-  
-  <p> Click anywhere on a row to see details </p>
-
-   <table>
-    <tr>
-      <th>name</th>
-      <th>email</th>
-    </tr>
-    <% @people.each do |person| %>
-      <tr>
-        <td><a href= 'suckers/<%= person[:id]%>'><%= person[:name] %></a></td>
-        <td><a href= 'suckers/<%= person[:id]%>'><%= person[:email] %></a></td>
-      </tr>
-    <% end %>
-  </table>
-
-  <footer>
-      <%= erb :footer_partial %>
-  </footer>
-</body>
+<table class="suckers_admin">
+<tr>
+  <th>name</th>
+  <th>email</th>
+</tr>
+<% @people.each do |person| %>
+  <tr>
+    <td><a href= 'suckers/<%= person[:id]%>'><%= person[:name] %></a></td>
+    <td><a href= 'suckers/<%= person[:id]%>'><%= person[:email] %></a></td>
+  </tr>
+<% end %>
+</table>

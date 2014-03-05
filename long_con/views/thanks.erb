@@ -1,29 +1,6 @@
-<!doctype html>
-<html lang="en">
 
-<head>
+<h1> Thanks! </h1>
 
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
- <!--Mainstyles css -->
-  <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" media=
-  "screen">
-</head>
+<p> Thanks, <%= @name %>! </br>
+ We'll let you know about this amazing, incredible opportunity just as soon as possible! </p>
 
-<body>
-  <div class="logo">
-    <a href="index"><img src="<%= url('/LongCon_logo.jpg') %>" width="210" height="210" alt="LongCon Logo"></a>
-  </div>
-
-  <div class="text">
-  	<%= erb :header_partial %>
-    <h1> Thanks! </h1>
-
-
-    <p> Thanks, <%= @name %>! </br>
-     We'll let you know about this amazing, incredible opportunity just as soon as possible! </p>
-  </div>
-
-  <footer>
-      <%= erb :footer_partial %>
-  </footer>
-</body>

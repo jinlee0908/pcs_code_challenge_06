@@ -1,38 +1,20 @@
-<!doctype html>
-<html lang="en">
+<h1> Suckers</h1>
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <!--Mainstyles css -->
-  <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" media=
-"screen">
-</head>
+<p><a href = '/suckers' >Return to listing</a></p>
 
-<body>
-	<%= erb :header_partial %>
-
-  <h1> Suckers</h1>
-
-  <p><a href = '/suckers' >Return to listing</a></p>
-
-   <table border=.5>
-    <tr>
-      <th>name</th>
-      <th>email</th>
-      <th>phone</th>
-      <th>twitter</th>
-    </tr>
-    <% @people.each do |person| %>
-      <tr>
-        <td><a><%= person[:name] %></a></td>
-        <td><a><%= person[:email] %></a></td>
-        <td><a><%= person[:phone] %></a></td>
-        <td><a><%= person[:twitter] %></a></td>
-      </tr>
+<table class="sucker_admin">
+  <tr>
+    <th>name</th>
+    <th>email</th>
+    <th>phone</th>
+    <th>twitter</th>
+  </tr>
+      <% @people.each do |person| %>
+        <tr>
+          <td><a><%= person[:name] %></a></td>
+          <td><a><%= person[:email] %></a></td>
+          <td><a><%= person[:phone] %></a></td>
+          <td><a><%= person[:twitter] %></a></td>
+        </tr>
     <% end %>
-  </table>
-
-  <footer>
-      <%= erb :footer_partial %>
-  </footer>
-</body>
+</table>
