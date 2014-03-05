@@ -8,7 +8,7 @@ before do
 end
 
 get '/' do 
-	erb:index
+  erb:index
 end
 
 post '/thanks' do
@@ -18,22 +18,14 @@ end
 
 get '/suckers' do
   @people = @test_data
-  # build a fake array of hashes
-  # to use in the view
-
   erb:suckers
 end
 
 get '/suckers/:id' do 
-  # @people = [@test_data.select {|person| person[:id] == params[:id]}] 
-  id = params[:id].to_i - 1
-  all_people = @test_data
-  @people = [all_people[id]]
-  # build a fake array of hashes
-  # to use in the view,
-  # but limit to just the row siginified by the :id 
+  @people = @test_data.select{|person| person[:id] == params[:id].to_i}
+  @people
   erb:suckers_specific
 end
 
-# end
+
 
