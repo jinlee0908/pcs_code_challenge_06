@@ -27,40 +27,58 @@ footer{
 float: right;
 margin-left: 10%;
 min-width: 40%;
-
 }
 /*============================== Index =========================================*/
 .form {
-	padding-left:5%;
-	padding-right: 5%;
-	padding-bottom: 7.5%;
+	padding: 2.5% 5% 7.5% 5%;
 	min-width: 50%;
 	max-width: 70%;
 	background-color: #8ED659;
 }
 
 Input[type="text"]{
-	width:400px;
+	width:60%;
 	height:20px;
 	margin-bottom: 1%;
 }
 
-Input[type="submit"]{
-	float: right;
-	margin-right: 10%
-}
-
 Input[name="name"]{
-	width:700px;
+	width:90%;
 }
 
-/*============================== Suckers =========================================*/
+Input[type="submit"]{
+	font-size: 75%;
+	float: right;
+	margin-right: 10%;
+}
+
+.submit_button {
+    border: 1px solid;
+    background: white;
+    color: #929292;
+    height:20px;
+    max-width: 25%;
+    min-width: 10%;
+}
+
+.submit_button:hover {
+    border: 1px solid blue;
+    background: #eef;
+}
+
+/*============================== Suckers & Suckers_id============================*/
 
 table{
-	border: 1px solid black;
-	height:50px;
+border-collapse:collapse;
+width: 80%;
 }
 
-td{
-	margin-right: 10px;
+table,th, td{
+border: 1px solid black;
+
+}
+
+th,td{
+  padding: 1.5% 3% 1.5% 3%;
+  text-align: center;
 }
