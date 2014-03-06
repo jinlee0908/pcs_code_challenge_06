@@ -1,12 +1,20 @@
 require './long_con_test_helper.rb'
 
 before do
-    @test_data = [{id:1, name:'Mrs. Theresa E. Stamm', email:'kieran@runte.biz', phone:'1-678-523-6736', twitter:'@Reinger'},
-    {id:2, name:'Keara Maggio', email:'cayla@lubowitz.com',phone:'1-399-471-4388 x9581', twitter:'@Weber'}]
+  @test_data = [{ id: 1,
+                  name: 'Mrs. Theresa E. Stamm',
+                  email: 'kieran@runte.biz',
+                  phone: '1-678-523-6736',
+                  twitter: '@Reinger' },
+                { id: 2,
+                  name: 'Keara Maggio',
+                  email: 'cayla@lubowitz.com',
+                  phone: '1-399-471-4388 x9581',
+                  twitter: '@Weber' }]
 end
 
+# test class
 class MyTest < MiniTest::Unit::TestCase
-
   include Rack::Test::Methods
 
   def app
@@ -52,5 +60,4 @@ class MyTest < MiniTest::Unit::TestCase
     get '/suckers/:id', :id => 2
     refute last_response.body.include?('Mrs. Theresa E. Stamm')
   end
-
 end

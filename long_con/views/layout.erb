@@ -6,21 +6,23 @@
 
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title><%= @header %></title>
+    <title><%= @heading %></title>
     <!--Mainstyles css -->
     <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" media="screen">
   </head>
 
   <body>
-    <header class="head">
-      <%= erb :header_partial %>
-    </header>
+    <div class="container">
+      <header class="head">
+        <%= erb :header_partial %>
+      </header>
 
-      <%=yield%>
+        <%=yield%>
 
-    <footer class="foot">
-        <%= erb :footer_partial %>
-    </footer>
+      <footer class="foot">
+          <%= erb :footer_partial %>
+      </footer>
+  </div>
   </body>
 
 </html>
