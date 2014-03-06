@@ -36,7 +36,7 @@ class MyTest < MiniTest::Unit::TestCase
   end
 
   def test_name_on_thanks
-    post '/thanks', :name => 'Jin'
+    post '/thanks', name: 'Jin'
     assert last_response.body.include?('Jin')
   end
 
@@ -52,12 +52,12 @@ class MyTest < MiniTest::Unit::TestCase
   end
 
   def test_single_sucker_on_specific_page
-    get '/suckers/:id', :id => 2
+    get '/suckers/:id', id: 2
     assert last_response.body.include?('Keara Maggio')
   end
 
   def test_other_sucker_not_on_specific_page
-    get '/suckers/:id', :id => 2
+    get '/suckers/:id', id: 2
     refute last_response.body.include?('Mrs. Theresa E. Stamm')
   end
 end
