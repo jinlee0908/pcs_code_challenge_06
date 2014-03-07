@@ -1,4 +1,5 @@
 require 'sinatra'
+enable :sessions
 
 before do
   @heading = 'Born Every Minute'
@@ -15,8 +16,13 @@ get '/' do
   erb:index
 end
 
-post '/thanks' do
-  @name = params[:name]
+post '/suckers' do
+  session[:name] = params[:name]
+  redirect '/thanks'
+end
+
+get '/thanks' do
+  @name = session[:name]
   erb:thanks
 end
 
