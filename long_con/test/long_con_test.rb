@@ -25,18 +25,22 @@ class MyTest < MiniTest::Unit::TestCase
     get '/'
     assert last_response.ok?
 
+    post '/suckers'
+    assert last_response.redirect?
+
     get '/suckers'
     assert last_response.ok?
 
     get '/suckers/:id'
     assert last_response.ok?
 
-    post '/thanks'
+    get '/thanks'
     assert last_response.ok?
   end
 
   def test_name_on_thanks
-    post '/thanks', name: 'Jin'
+    post '/suckers', name:'Jin'
+    follow_redirect!
     assert last_response.body.include?('Jin')
   end
 
