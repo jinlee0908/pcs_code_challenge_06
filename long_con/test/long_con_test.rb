@@ -39,7 +39,7 @@ class MyTest < MiniTest::Unit::TestCase
   end
 
   def test_name_on_thanks
-    post '/suckers', name:'Jin'
+    post '/suckers', name: 'Jin'
     follow_redirect!
     assert last_response.body.include?('Jin')
   end
